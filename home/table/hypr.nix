@@ -42,8 +42,6 @@
         border_size = 1;
         "col.active_border" = "rgba(88888888)";
         "col.inactive_border" = "rgba(00000088)";
-
-        allow_tearing = true;
       };
 
       decoration = {
@@ -55,28 +53,25 @@
           noise = 0.02;
           passes = 3;
           size = 10;
-      };
-        drop_shadow = true;
-        shadow_ignore_window = true;
-        shadow_offset = "0 2";
-        shadow_range = 20;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(00000055)";
+        }
       };
 
       animations = {
         enabled = true;
-        animation = [
-          "border, 1, 2, default"
-          "fade, 1, 4, default"
-          "windows, 1, 3, default, popin 80%"
-          "workspaces, 1, 2, default, slide"
-        ];
+      # animation = [
+        #  "border, 1, 2, default"
+        #  "fade, 1, 4, default"
+        #  "windows, 1, 3, default, popin 80%"
+        #  "workspaces, 1, 2, default, slide"
+      # ];
       };
 
 
     };
     # bindm later
-		extraConfig = builtins.readFile ./stuff/hypr.conf;
+		extraConfig = "
+      bindm = $mod, mouse:272, movewindow
+      bindm = $mod, mouse:273, resizewindow
+    ";
 	};
 }
