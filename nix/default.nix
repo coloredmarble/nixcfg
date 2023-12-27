@@ -1,4 +1,4 @@
-{config, libs, pkgs, ...}:
+{config, lib, pkgs, ...}:
 
 {
   imports = [
@@ -7,7 +7,7 @@
     ./network.nix
     ./pkgs.nix
     ./security.nix
-    ./services.nix
+    ./services
   ];
   users.defaultUserShell = pkgs.zsh;
   users.users.retard = {

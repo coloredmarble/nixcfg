@@ -1,17 +1,28 @@
 { config, pkgs, ... }:
 { 
+
+  home.packages = with pkgs; [
+    swww
+  ];
+
   wayland.windowManager.hyprland = {	
 		enable = true;
 		xwayland.enable = true;
     settings = {
       "$mod" = "Alt";
       "$terminal" = "alacritty";
+
+      exec-once = [
+        "swww init && swww img ~/w.png"
+      ];
+
       bind = [
         "$mod, space, exec, $terminal"
         "$mod, Tab, exec, wofi --show drun --allow-images"
         "$mod, q, killactive"
         "$mod, p, exec, poweroff"
         "$mod, l, exec, reboot"
+        "$mod, k, exec, hyprctl dispatch exit"
       ] ++ 
       (
         # workspaces
@@ -37,33 +48,27 @@
       };
 
       general = {
-        gaps_in = 5;
-        gaps_out = 5;
-        border_size = 1;
+        gaps_in = 10;
+        gaps_out = 15;
+        border_size = 0;
         "col.active_border" = "rgba(88888888)";
         "col.inactive_border" = "rgba(00000088)";
       };
 
       decoration = {
-        rounding = 16;
+        rounding = 10;
+        active_opacity = 1.0;
+        inactive_opacity = 0.9;
         blur = {
           enabled = true;
-          brightness = 1.0;
-          contrast = 1.0;
-          noise = 0.02;
+          new_optimizations = true;
           passes = 3;
-          size = 10;
+          size = 3;
         };
       };
 
       animations = {
         enabled = true;
-      # animation = [
-        #  "border, 1, 2, default"
-        #  "fade, 1, 4, default"
-        #  "windows, 1, 3, default, popin 80%"
-        #  "workspaces, 1, 2, default, slide"
-      # ];
       };
 
 

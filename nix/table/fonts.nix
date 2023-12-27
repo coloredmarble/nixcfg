@@ -1,5 +1,4 @@
-{pkgs, ...}:
-
+{lib, pkgs, ...}:
 {
   # table sounds cooler than desk
   # Select internationalisation properties.

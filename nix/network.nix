@@ -1,4 +1,3 @@
-{...}:
 {
   networking.hostName = "retard";
   # networking.wireless.enable = true;

@@ -1,11 +1,14 @@
-{config, pkgs, ...}:
+{lib, pkgs, ...}:
 
 {
+  imports = [
+    ./fonts.nix
+  ];
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.options = "eurosign:e,caps:escape";
   
-  # any programs with less than 5 lines of config? keep it here
+  # any programs with less than 6 lines of config? keep it here
   programs = {
     zsh = {
       enable = true;
@@ -15,8 +18,8 @@
           theme = "linuxonly";
       };
     };
-    xfconf.enable = true;
     thunar.enable = true;
+    xfconf.enable = true;
     hyprland.enable = true;
   };
 

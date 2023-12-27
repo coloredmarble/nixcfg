@@ -6,6 +6,5 @@
 		wget
 		zsh
 		polkit_gnome
-		catppuccin
   ];
 }
