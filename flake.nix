@@ -11,16 +11,16 @@
   let
   system = "x86_64-linux";
   pkgs = import nixpkgs {
-    system = system;
+    inherit system;
 	  config.allowUnfree = true;	
   };
   lib = nixpkgs.lib;
   in {
     nixosConfigurations = {
       retard = lib.nixosSystem rec {
-        system = system; 
+        inherit system;
         modules = [ 
-          ./host
+          ./host/shittydesk.nix
           ./nix
           home-manager.nixosModules.home-manager
           {

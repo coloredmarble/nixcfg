@@ -6,5 +6,6 @@
 	  alacritty
 	  wofi
 	  vscodium
+		neofetch
   ];
 }

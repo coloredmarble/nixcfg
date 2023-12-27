@@ -10,5 +10,5 @@
 
   home.stateVersion = "24.05"; 
 
-  home.home-manager.enable = true;
+  programs.home-manager.enable = true;
 }

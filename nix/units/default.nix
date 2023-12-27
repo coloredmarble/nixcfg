@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./gnome_polkit
+    ./gnome_polkit.nix
   ];
 }

@@ -53,7 +53,7 @@
           noise = 0.02;
           passes = 3;
           size = 10;
-        }
+        };
       };
 
       animations = {
