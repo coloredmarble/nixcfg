@@ -1,11 +1,14 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  rootPath,
+  ...
+}: {
   imports = [
     ./alacritty.nix
-    ./dunst.nix
     ./gtk.nix
     ./hypr.nix
+    ./waybar.nix
   ];
 
   home.sessionVariables = {
@@ -13,10 +16,10 @@
   };
   # any programs with less than 5 lines of config? keep it here
   programs = {
-      git = {
-        enable = true;
-        userName = "gitretard";
-        userEmail = "znobbitcatspro@gmail.com";
-      };
-	};
+    git = {
+      enable = true;
+      userName = "gitretard";
+      userEmail = "znobbitcatspro@gmail.com";
+    };
+  };
 }

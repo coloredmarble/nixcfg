@@ -1,13 +1,15 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   gtk = {
     enable = true;
     theme = {
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "lavender" ];
+        accents = ["lavender"];
         size = "standard";
-        tweaks = [ "black" ];
+        tweaks = ["black"];
         variant = "macchiato";
       };
       name = "Catppuccin-Macchiato-Standard-Lavender-Dark";
@@ -19,9 +21,8 @@
     };
 
     font = {
-      name = "Fira Code";
+      name = "Monoid Nerd Font Mono Bold";
       size = 11;
     };
   };
- 
 }

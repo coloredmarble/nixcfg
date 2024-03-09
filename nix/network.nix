@@ -1,5 +1,7 @@
 {
   networking.hostName = "retard";
   # networking.wireless.enable = true;
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;
+  networking.dhcpcd.wait = "if-carrier-up";
+  systemd.services.NetworkManager-wait-online.enable = false;
 }

@@ -1,6 +1,9 @@
-{config, lib, pkgs, ...}:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./table
     ./units
@@ -8,14 +11,11 @@
     ./pkgs.nix
     ./security.nix
     ./services
+    ./users.nix
   ];
-  users.defaultUserShell = pkgs.zsh;
-  users.users.retard = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "network" "input" "video" "audio"];
-  };
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   time = {
-		timeZone = "Asia/Bangkok";
-	};
+    timeZone = "Asia/Bangkok";
+  };
   system.stateVersion = "unstable";
 }
