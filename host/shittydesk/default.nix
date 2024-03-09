@@ -22,14 +22,14 @@
     fsType = "btrfs";
   };
   boot.loader.efi.efiSysMountPoint = "/efi";
-  swapDevices = [];
-  hardware = {
-    opengl.enable = true;
-    opengl.driSupport = true;
-    opengl.driSupport32Bit = true;
-    opengl.package = pkgs.mesa.drivers;
-    cpu.intel.updateMicrocode = true;
-  };
+  # i have no fucking idea how to fix
+  #hardware = {
+    #opengl.enable = true;
+    #opengl.driSupport = true;
+    #opengl.driSupport32Bit = true;
+    #opengl.package = pkgs.mesa.drivers;
+   # cpu.intel.updateMicrocode = true;
+  #};
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
