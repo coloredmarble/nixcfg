@@ -21,7 +21,7 @@
     };
 
     font = {
-      name = "Monoid Nerd Font Mono Bold";
+      name = "Fira Code Medium";
       size = 11;
     };
   };
