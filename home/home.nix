@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ./table
+   ./table
     ./pkgs.nix
   ];
   home.username = "retard";
