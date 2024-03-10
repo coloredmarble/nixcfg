@@ -5,7 +5,6 @@
     gcc
     pavucontrol
     xarchiver
-    godot_4
     sxiv
     xarchiver
     telegram-desktop

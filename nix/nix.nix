@@ -15,9 +15,11 @@
   programs.dconf.enable = true;
   
   sound.enable = true;
+
   users.users.retard = {
     isNormalUser = true;
     extraGroups = [ "wheel" "network" "input" "video" "audio"];
+    shell = pkgs.zsh;
   };
 
   environment.systemPackages = with pkgs; [
@@ -29,9 +31,12 @@
   programs = {
     zsh = {
       enable = true;
-        ohMyZsh = {
+      enableCompletion = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+      ohMyZsh = {
           enable = true;
-          plugins = [ "git" ];
+          plugins = [ "git" "thefuck" ];
           theme = "lambda";
       };
     };
