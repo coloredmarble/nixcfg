@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -7,25 +7,22 @@
     ./services.nix
   ];
 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nixpkgs.config.allowUnfree = true;
+  
   networking.hostName = "retard";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Bangkok";
 
-  programs.dconf.enable = true;
-  
-  sound.enable = true;
-
-  users.users.retard = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "network" "input" "video" "audio"];
-    shell = pkgs.zsh;
-  };
 
   environment.systemPackages = with pkgs; [
-     vim 
-     wget
-     git
+    vim 
+    wget
+    git
+    htop
+    neofetch
+    ncdu
   ];
 
   programs = {
@@ -36,24 +33,27 @@
       syntaxHighlighting.enable = true;
       ohMyZsh = {
           enable = true;
-          plugins = [ "git" "thefuck" ];
+          plugins = [ "git"];
           theme = "lambda";
       };
     };
-    xfconf.enable = true;
-    hyprland.enable = true;
-  };
-
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
   };
 
   # rtkit is optional but recommended
   security.rtkit.enable = true;
 
   system.stateVersion = "unstable";
-  
 
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = true;
+    flags = [
+      "--recreate-lock-file"
+      "--no-write-lock-file"
+      "-L" # print build logs
+    ];
+    dates = "daily";
+  };
 }
+  
 

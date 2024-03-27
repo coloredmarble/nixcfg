@@ -5,6 +5,7 @@
 }: {
   home.packages = with pkgs; [
     swww
+    wofi
   ];
 
   wayland.windowManager.hyprland = {
@@ -12,7 +13,7 @@
     xwayland.enable = true;
     settings = {
       "$mod" = "Alt";
-      "$terminal" = "alacritty";
+      "$terminal" = "kitty";
 
       exec-once = [
         "swww init && swww img ~/w.png"
@@ -27,6 +28,7 @@
           "$mod, l, exec, reboot"
           "$mod, k, exec, hyprctl dispatch exit"
           "$mod, w, exec, waybar"
+          "$mod, s, togglefloating"
         ]
         ++ (
           # workspaces
@@ -44,6 +46,10 @@
             )
             10)
         );
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
 
       monitor = "HDMI-A-1,1920x1080@144,0x0,1";
 
@@ -67,10 +73,6 @@
         enabled = true;
       };
     };
-    # bindm
-    extraConfig = "
-      bindm = $mod, mouse:272, movewindow
-      bindm = $mod, mouse:273, resizewindow
-    ";
+    # bindmw
   };
 }

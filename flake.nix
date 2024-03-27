@@ -6,12 +6,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    rust-overlay,
     ...
   }: let
     system = "x86_64-linux";
@@ -33,8 +35,12 @@
             home-manager = {
               extraSpecialArgs = {rootPath = ./.;};
             };
-            home-manager.users.retard = {imports = [./home/home.nix ./host/shittydesk/home.nix];};
+            home-manager.users.retard = {imports = [./home/home.nix ./host/shittydesk/home.nix];}; 
           }
+          ({ pkgs, ... }: let r = pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {extensions = [ "rust-src" "rust-analyzer" ];}); in {
+            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+            environment.systemPackages = [r];
+          })
         ];
       };
     };

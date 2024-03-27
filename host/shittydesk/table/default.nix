@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ./alacritty.nix
+    ./kitty.nix
     ./gtk.nix
     ./hypr.nix
     ./waybar.nix
@@ -18,8 +18,8 @@
   programs = {
     git = {
       enable = true;
-      userName = "gitretard";
-      userEmail = "znobbitcatspro@gmail.com";
+      userName = "coloredmarble";
+      userEmail = "retardedmf@proton.me";
     };
   };
 }
