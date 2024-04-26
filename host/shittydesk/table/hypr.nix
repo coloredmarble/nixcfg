@@ -16,7 +16,7 @@
       "$terminal" = "kitty";
 
       exec-once = [
-        "swww init && swww img ~/w.png"
+        "swww init && swww img ~/nixcfg/stuff/wall/wallhaven-34xkv0.jpg"
       ];
 
       bind =

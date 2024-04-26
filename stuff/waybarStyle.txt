@@ -36,15 +36,15 @@
         @define-color unfocused	@bg2;
         @define-color focused	@braqua;
         @define-color inactive	@purple;
-        @define-color sound	@brpurple;
+        @define-color sound	#C5EBAA;
         @define-color network	@purple;
-        @define-color memory	@braqua;
-        @define-color cpu	@green;
-        @define-color temp	@brgreen;
-        @define-color layout	@bryellow;
+        @define-color layout	#ffc0ab;
         @define-color battery	@aqua;
-        @define-color date	@black;
-        @define-color time	@white;
+        @define-color date	#e0d6ff;
+        @define-color time	#cdedce;
+        @define-color a3 @green;
+        @define-color a4 @brgreen;
+        @define-color a5 #A5DD9B;
   
         /* Reset all styles */
         * {
@@ -68,55 +68,15 @@
         }
   
         /* Each module */
-        #battery,
-        #clock,
-        #cpu,
         #language,
-        #memory,
         #mode,
-        #network,
         #pulseaudio,
-        #temperature,
         #tray,
-        #backlight,
-        #idle_inhibitor,
-        #disk,
-        #user,
         #mpris {
             padding-left: 8pt;
             padding-right: 8pt;
         }
-  
-        /* Each critical module */
-        #mode,
-        #memory.critical,
-        #cpu.critical,
-        #temperature.critical,
-        #battery.critical.discharging {
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            animation-direction: alternate;
-            animation-name: blink-critical;
-            animation-duration: 1s;
-        }
-  
-        /* Each warning */
-        #network.disconnected,
-        #memory.warning,
-        #cpu.warning,
-        #temperature.warning,
-        #battery.warning.discharging {
-            color: @warning;
-        }
-  
-        /* And now modules themselves in their respective order */
-  
-        /* Current sway mode (resize etc) */
-        #mode {
-            color: @white;
-            background: @mode;
-        }
-  
+
         /* Workspaces stuff */
         #workspaces button {
             /*font-weight: bold;*/
@@ -164,31 +124,11 @@
             background: @network;
             color: @white;
         }
-  
-        #memory {
-            background: @memory;
-            color: @black;
-        }
-  
-        #cpu {
-            background: @cpu;
-            color: @white;
-        }
-  
-        #temperature {
-            background: @temp;
-            color: @black;
-        }
-  
         #language {
             background: @layout;
             color: @black;
         }
   
-        #battery {
-            background: @battery;
-            color: @white;
-        }
   
         #tray {
             background: @date;
@@ -196,7 +136,6 @@
   
         #clock.date {
             background: @date;
-            color: @white;
         }
   
         #clock.time {
@@ -204,62 +143,44 @@
             color: @black;
         }
   
-        #custom-arrow1 {
+        #custom-arrow0 {
             font-size: 11pt;
             color: @time;
             background: @date;
         }
-  
-        #custom-arrow2 {
+
+        #custom-arrow1 {
             font-size: 11pt;
             color: @date;
             background: @layout;
         }
-  
-        #custom-arrow3 {
+
+        #custom-arrow2 {
             font-size: 11pt;
             color: @layout;
-            background: @battery;
+            background: @a3;
         }
-  
+
+        #custom-arrow3 {
+            font-size: 11pt;
+            color: @a3;
+            background: @a4;
+        }
+
         #custom-arrow4 {
             font-size: 11pt;
-            color: @battery;
-            background: @temp;
+            color: @a4;
+            background: @a5;
         }
-  
         #custom-arrow5 {
             font-size: 11pt;
-            color: @temp;
-            background: @cpu;
-        }
-  
-        #custom-arrow6 {
-            font-size: 11pt;
-            color: @cpu;
-            background: @memory;
-        }
-  
-        #custom-arrow7 {
-            font-size: 11pt;
-            color: @memory;
-            background: @network;
-        }
-  
-        #custom-arrow8 {
-            font-size: 11pt;
-            color: @network;
+            color: @a5;
             background: @sound;
         }
-  
-        #custom-arrow9 {
+        #custom-arrow6 {
             font-size: 11pt;
             color: @sound;
-            background: transparent;
+            background: @transparent;
         }
-  
-        #custom-arrow10 {
-            font-size: 11pt;
-            color: @unfocused;
-            background: transparent;
-        }
+
+     

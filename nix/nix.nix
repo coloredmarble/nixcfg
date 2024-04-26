@@ -23,6 +23,8 @@
     htop
     neofetch
     ncdu
+    tmux
+    clang
   ];
 
   programs = {
@@ -50,10 +52,11 @@
     flags = [
       "--recreate-lock-file"
       "--no-write-lock-file"
-      "-L" # print build logs
+      "-L"
     ];
     dates = "daily";
   };
+  nix.settings.auto-optimise-store = true;
 }
   
 

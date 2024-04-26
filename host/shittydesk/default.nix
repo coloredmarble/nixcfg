@@ -54,6 +54,14 @@
     shell = pkgs.zsh;
   };
 
+  environment.systemPackages = with pkgs; [
+    clang-tools
+    gcc-arm-embedded
+    nasm
+    fasm
+    gdb
+  ];
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;

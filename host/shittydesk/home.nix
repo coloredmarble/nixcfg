@@ -7,13 +7,15 @@
     discord
     firefox
     vscodium
-    gcc
     pavucontrol
     xarchiver
     sxiv
     xarchiver
     telegram-desktop
     alejandra
+    pinta
+    qemu
+    obs-studio
   ];
 
 

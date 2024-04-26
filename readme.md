@@ -7,4 +7,6 @@ nix = nix system config
 stuff = stuff
 ``````
 
-remeber to set user when making host
+rember to set user when making host
+
+cums wit atleast 0 compressed wallpapers (change in hypr.nix)

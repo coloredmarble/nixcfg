@@ -10,100 +10,59 @@
         modules-left = [
           "hyprland/mode"
           "hyprland/workspaces"
-          "custom/arrow10"
           "hyprland/window"
         ];
         modules-right = [
-          "custom/arrow9"
-          "pulseaudio"
-          "custom/arrow8"
-          "network"
-          "custom/arrow7"
-          "memory"
           "custom/arrow6"
-          "cpu"
+          "pulseaudio"
           "custom/arrow5"
-          "temperature"
           "custom/arrow4"
           "custom/arrow3"
-          "hyprland/language"
           "custom/arrow2"
+          "hyprland/language"
+          "custom/arrow1"
           "tray"
           "clock#date"
-          "custom/arrow1"
+          "custom/arrow0"
           "clock#time"
         ];
 
         "clock#time" = {
           interval = 1;
-          format = "{:%H:%M:%S}";
+          format = "{:%H%M}";
           tooltip = false;
         };
 
         "clock#date" = {
           interval = 10;
-          format = "{:%e %b %Y}";
+          format = "{:%e %b %y}";
           tooltip = false;
         };
-        cpu = {
-          interval = 1;
-          tooltip = true;
-          format = " {usage}%";
-          format-alt = " {load}";
-          states = {
-            warning = 70;
-            critical = 90;
-          };
-        };
         "hyprland/language" = {
-          format = " {}";
+          format = "{}";
           min-length = 5;
           tooltip = false;
         };
         pulseaudio = {
-          format = "{icon} {volume}% {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-icons = {
-            car = "";
-            default = ["" "" ""];
-            handsfree = "";
-            headphones = "";
-            headset = "";
-            phone = "";
-            portable = "";
-          };
-          format-muted = " {format_source}";
-          format-source = "{volume}% ";
+          format = "vol {volume}% {format_source}";
           format-source-muted = "";
           on-click = "pavucontrol";
         };
         network = {
           interval = 1;
-          format-alt = "{ifname}: {ipaddr}/{cidr}";
+          format-alt = "{essid} ({signalStrength}%)";
           format-disconnected = "balls";
           format-ethernet = "{ifname}: {ipaddr}/{cidr}   up: {bandwidthUpBits} down: {bandwidthDownBits}";
-          format-linked = "{ifname} (No IP) ";
-          format-wifi = "{essid} ({signalStrength}%)";
-        };
-        memory = {format = "{}% ";};
-        temperature = {
-          critical-threshold = 80;
-          format = "{icon} {temperatureC}°";
-          format-icons = [
-            ""
-            ""
-            ""
-            ""
-            ""
-          ];
-        };
-        "hyprland/mode" = {
-          format = "{}";
+          format-linked = "{ifname} (No balls) ";
+          format-wifi = "{ifname}: {ipaddr}/{cidr}";
         };
         tray = {
           icon-size = 18;
           spacing = 10;
+        };
+        "custom/arrow0" = {
+          format = "";
+          tooltip = false;
         };
         "custom/arrow1" = {
           format = "";
@@ -127,22 +86,6 @@
         };
         "custom/arrow6" = {
           format = "";
-          tooltip = false;
-        };
-        "custom/arrow7" = {
-          format = "";
-          tooltip = false;
-        };
-        "custom/arrow8" = {
-          format = "";
-          tooltip = false;
-        };
-        "custom/arrow9" = {
-          format = "";
-          tooltip = false;
-        };
-        "custom/arrow10" = {
-          format = "";
           tooltip = false;
         };
       }
